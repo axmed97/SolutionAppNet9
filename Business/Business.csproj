@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ValidationRules\FluentValidation\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="8.1.1" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.406.2" />
+    <PackageReference Include="Google.Apis.Auth" Version="1.68.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="StatusMessages\Message.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Message.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="StatusMessages\Message.az.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Message.az.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="StatusMessages\Message.ru-RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Message.ru-RU.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="StatusMessages\Message.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Message.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="StatusMessages\Message.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Message.resx</DependentUpon>
+    </Compile>
+    <Compile Update="StatusMessages\Message.az.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Message.az.resx</DependentUpon>
+    </Compile>
+    <Compile Update="StatusMessages\Message.ru-RU.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Message.ru-RU.resx</DependentUpon>
+    </Compile>
+    <Compile Update="StatusMessages\Message.en-US.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Message.en-US.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
